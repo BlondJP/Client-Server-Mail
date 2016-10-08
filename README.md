@@ -1,5 +1,10 @@
-# JPMail
+# Client + Server Mail<br>
 
-Client + Server Mail<br>
+Stack: Angular.js + Node.js + Express.js + MongoDB<br>
 
-Stack: Angular.js + Node.js + Express.js + MongoDB
+Instalation:<br>
+<ul>
+  <li>git clone</li>
+  <li>node server.js</li>
+  <li>GET http://localhost:3000/</li>
+</ul>
