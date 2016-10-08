@@ -49,8 +49,8 @@
           <tr ng-repeat="email in currentFolder.emails" class="clickable" ng-click="selectEmail(email)">
             <td>{{ email.from }}</td>
             <td>{{ email.to }}</td>
-            <td>{{ email.subject }}</td>
-            <td>{{ email.date }}</td>
+            <td>{{ email.object }}</td>
+            <td><button type="button" class="btn btn-sm btn-info" ng-click="removeMail(email)">Supprimer le Mail</button></td>
           </tr>
       </tbody>
     </table>

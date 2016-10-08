@@ -5,6 +5,13 @@ module.exports = function (app)
 {
 /* API RESTFULL POUR GESTION DES MAILS */
 
+  /*Renvoie le dossier formatté*/
+  app.get('/folder', function (req, res) {
+    MailModel.getFolders(function (folders){
+      return res.send(folders);
+    });
+  });
+
   /* Renvoie tous les mails */
   app.get('/mail', function (req, res) {
     MailModel.getMails(function (mails){
@@ -13,9 +20,6 @@ module.exports = function (app)
   });
 
   /* permet de cibler un mail spécifique */
-  app.get('/mail/:id', function (req, res) {
-    return res.send(['lol', 'lal']);
-  });
 
   /* permet d'ajouter un mail en bdd */
   app.post('/mail', function (req, res) {
@@ -28,8 +32,14 @@ module.exports = function (app)
 
 
   /* permet de supprimer un mail */
-  app.delete('/mail', function (req, res) {
-    return res.send(['lol', 'lal']);
+  app.delete('/mail/:id', function (req, res) {
+    var _id = req.params.id;
+    global.MongoMailModel.remove({_id: _id}, function(err,removed) {
+        if (err) throw err;
+        else
+          return res.send(_id);
+    });
+
   });
 
 }
