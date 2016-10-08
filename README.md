@@ -2,7 +2,7 @@
 
 Stack: Angular.js + Node.js + Express.js + MongoDB<br>
 
-Instalation:<br>
+<div style="font-decoration:underline;">Instalation:<div>
 <ul>
   <li>git clone</li>
   <li>node server.js</li>
